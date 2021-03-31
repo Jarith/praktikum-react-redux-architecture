@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "ES6",
+    "target": "ES5",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outDir": "./static",
+    "sourceMap": true,
+    "alwaysStrict": true,
+    "lib": [
+      "DOM",
+      "ES2019",
+      "DOM.Iterable"
+    ],
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "app": ["app"],
+      "app/*": ["app/*"],
+      "entities/*": ["entities/*"],
+      "types": ["types"],
+      "*": ["src/*"],
+    }
+  },
+  "include": [
+    "src",
+    "app"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
