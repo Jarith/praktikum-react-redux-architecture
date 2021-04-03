@@ -1,0 +1,30 @@
+.container {
+    margin: 0 auto;
+    min-width: 768px;
+    padding: 0 20px;
+}
+
+.main-content-wrapper {
+    display: flex;
+    margin: 0 auto;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    width: 100%;
+}
+
+.main-content-wrapper__filter {
+    margin-bottom: 20px;
+}
+
+.tickets__sort {
+    margin-bottom: 20px;
+}
+
+.tickets__item {
+    margin-bottom: 20px;
+}
+
+.tickets__item:last-child {
+    margin-bottom: 0;
+}

@@ -1,1 +1,1 @@
-# tstalk-sample
+# praktikum-react-redux-architecture 

@@ -1,10 +1,8 @@
 {
-  "name": "tstalk-sample",
+  "name": "praktikum-react-redux-architecture",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
     "check:types": "tsc --noEmit",
     "start": "webpack serve"
   },
@@ -14,15 +12,9 @@
   },
   "author": "Jarith",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Jarith/tstalk-sample/issues"
-  },
-  "homepage": "https://github.com/Jarith/tstalk-sample#readme",
   "dependencies": {
-    "@reduxjs/toolkit": "1.5.1",
     "axios": "0.21.1",
     "classnames": "2.3.1",
-    "connected-react-router": "6.9.1",
     "date-fns": "2.19.0",
     "immer": "9.0.1",
     "normalizr": "3.6.1",
@@ -35,8 +27,7 @@
     "redux": "4.0.5",
     "redux-immer": "1.0.5",
     "redux-thunk": "2.3.0",
-    "reselect": "4.0.0",
-    "uuid": "8.3.2"
+    "reselect": "4.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.13.14",

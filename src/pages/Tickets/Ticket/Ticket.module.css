@@ -1,0 +1,28 @@
+@import 'src/pages/vars.css';
+
+.ticket {
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+.ticket__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.ticket__price {
+    color: var(--primary-accent);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 0;
+}

@@ -1,0 +1,39 @@
+@import 'src/pages/vars.css';
+
+.ticket__row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.ticket__row:last-child {
+    margin-bottom: 0;
+}
+
+.ticket__col {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.ticket__col:last-child {
+    margin-bottom: 0;
+}
+
+.ticket__label {
+    color: var(--label-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.ticket__value {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    margin: 0;
+}

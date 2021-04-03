@@ -1,0 +1,49 @@
+@import "src/pages/vars.css";
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--main-font-color);
+    font-family: var(--main-font);
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../static/fonts/OpenSans-SemiBold.woff2") format("woff2"),
+    url("../static/fonts/OpenSans-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../static/fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("../static/fonts/OpenSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
