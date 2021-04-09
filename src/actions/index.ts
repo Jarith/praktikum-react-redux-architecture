@@ -1,4 +1,4 @@
-export type Action<P = void> = {
-    type: string;
-    payload: P extends void ? void : P;
+export type Action<T = string, P = void> = {
+    type: T;
+    payload: P;
 };

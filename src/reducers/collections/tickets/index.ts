@@ -1,6 +1,5 @@
 import type { Ticket } from 'entities/tickets';
-import type { Action } from 'actions';
-import type { ResolveTicketsResult } from 'app/resolvers/tickets';
+import type { FulfilledAction } from 'actions/tickets';
 import { FETCH_TICKETS_FULFILLED } from 'actions/tickets';
 
 export type Tickets = {
@@ -9,7 +8,7 @@ export type Tickets = {
 
 export const tickets = (
     state: Tickets = {},
-    action: Action<ResolveTicketsResult>
+    action: FulfilledAction,
 ) => {
     switch (action.type) {
         case FETCH_TICKETS_FULFILLED: {

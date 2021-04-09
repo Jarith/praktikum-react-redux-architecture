@@ -1,6 +1,5 @@
 import type { TicketId } from 'entities/tickets';
-import { Action } from 'actions';
-import { ResolveTicketsResult } from 'app/resolvers/tickets';
+import type {FetchAction, FulfilledAction, FailedAction} from 'actions/tickets';
 import {
     FETCH_TICKETS,
     FETCH_TICKETS_FAILED,
@@ -17,11 +16,13 @@ const initialState = {
     items: [],
 };
 
+type Actions = FulfilledAction | FetchAction | FailedAction;
+
 export const tickets = (
     state: Tickets = initialState,
-    action: Action<ResolveTicketsResult>
+    action: Actions,
 ) => {
-    switch (action?.type) {
+    switch (action.type) {
         case FETCH_TICKETS: {
             state.loading = true;
 
@@ -29,7 +30,7 @@ export const tickets = (
         }
         case FETCH_TICKETS_FULFILLED: {
             state.loading = false;
-            state.items = action?.payload.result;
+            state.items = action.payload.result;
 
             return state;
         }
