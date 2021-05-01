@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react'
 import List from '../';
 
 import { mockStore } from 'mocks/store';
@@ -9,13 +9,13 @@ jest.mock(
     '../../Ticket',
     () =>
         function Ticket() {
-            return null;
+            return <div aria-label="Ticket" />;
         }
 );
 
 describe('<List />', () => {
     let store;
-    let wrapper;
+    let renderResult;
 
     beforeEach(() => {
         store = mockStore({
@@ -27,7 +27,7 @@ describe('<List />', () => {
             },
         });
 
-        wrapper = mount(
+        renderResult = render(
             <Provider store={store}>
                 <List />
             </Provider>
@@ -36,7 +36,7 @@ describe('<List />', () => {
 
     describe('Рендерит необходимое количество компонентов <Ticket />, если', () => {
         it('данные загружены', () => {
-            expect(wrapper.find('List').find('Ticket')).toHaveLength(3);
+            expect(screen.getAllByLabelText('Ticket')).toHaveLength(3);
         });
     });
 
@@ -50,20 +50,24 @@ describe('<List />', () => {
                 },
             });
 
-            wrapper = mount(
+            render(
                 <Provider store={store}>
                     <List />
                 </Provider>
             );
 
-            expect(wrapper.find('List').find('Loader')).toHaveLength(1);
+            expect(screen.getByLabelText('Loader')).toHaveTextContent('Loading...');
         });
     });
 
     it('Диспатчит экшн для загрузки данных только один раз', () => {
         expect(store.getActions()).toEqual([{ type: 'tickets/FETCH' }]);
 
-        wrapper.setProps({});
+        renderResult.rerender(
+            <Provider store={store}>
+                <List />
+            </Provider>
+        );
 
         expect(store.getActions()).toEqual([{ type: 'tickets/FETCH' }]);
     });

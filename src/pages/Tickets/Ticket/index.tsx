@@ -22,7 +22,7 @@ const Ticket = ({ ticket }: Props) => {
     const { id, price, carrier, segments } = ticket;
 
     return (
-        <div className={cn(css.ticket, css.tickets__item)}>
+        <div className={cn(css.ticket, css.tickets__item)} aria-label="Ticket">
             <div className={css.ticket__wrapper}>
                 <p className={css.ticket__price}>{price} Р</p>
                 <Image

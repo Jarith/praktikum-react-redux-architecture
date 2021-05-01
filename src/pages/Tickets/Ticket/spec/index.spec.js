@@ -1,15 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react'
 import Ticket from '../';
 
 import { mockStore } from 'mocks/store';
-
-jest.mock('../Row', () => ({
-    Row() {
-        return null;
-    },
-}));
 
 const id = 1;
 const segment = { mock: true };
@@ -22,7 +16,6 @@ const ticket = {
 
 describe('<Ticket />', () => {
     let store;
-    let wrapper;
 
     beforeEach(() => {
         store = mockStore({
@@ -33,7 +26,7 @@ describe('<Ticket />', () => {
             },
         });
 
-        wrapper = mount(
+        render(
             <Provider store={store}>
                 <Ticket id={id} />
             </Provider>
@@ -41,10 +34,8 @@ describe('<Ticket />', () => {
     });
 
     it('Рендерится корректно', () => {
-        expect(wrapper.find('Ticket').props().ticket).toEqual(ticket);
-    });
-
-    it('Рендерит <Row /> для каждого сегмента', () => {
-        expect(wrapper.find('Row')).toHaveLength(2);
+        expect(screen.getByText(/^\d+\sР$/)).toHaveTextContent('100500 Р');
+        expect(screen.getByAltText('carrier')).toBeVisible();
+        expect(screen.getAllByLabelText('Segment')).toHaveLength(2);
     });
 });
