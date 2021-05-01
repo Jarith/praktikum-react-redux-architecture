@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import type { State } from 'reducers';
 import type { TicketId } from 'entities/tickets';
 
+import { Loader } from 'components/Loader';
 import { getIsLoading, getTickets } from 'selectors/widgets/tickets';
 import { fetchTickets } from 'thunks/collections/tickets';
 import Ticket from '../Ticket';
@@ -18,10 +19,10 @@ type Props = {
 export const List = ({ tickets, isLoading, fetchTicketsThunk }: Props) => {
     useEffect(() => {
         fetchTicketsThunk();
-    }, []);
+    });
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <Loader />;
     }
 
     return (
