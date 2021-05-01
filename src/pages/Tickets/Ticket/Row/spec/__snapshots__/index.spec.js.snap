@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Row /> Рендерится корректно 1`] = `
+<Row
+  destination="destination"
+  duration={100500}
+  endTime="endTime"
+  origin="origin"
+  startTime="startTime"
+  stops="stops"
+  stopsCount={100500}
+>
+  <div
+    className="ticket__row"
+  >
+    <div
+      className="ticket__col"
+    >
+      <p
+        className="ticket__label"
+      >
+        origin
+         – 
+        destination
+      </p>
+      <p
+        className="ticket__value"
+      >
+        <time
+          className="ticket__start-time"
+        >
+          startTime
+        </time>
+        –
+        <time
+          className="ticket__end-time"
+        >
+          endTime
+        </time>
+      </p>
+    </div>
+    <div
+      className="ticket__col"
+    >
+      <p
+        className="ticket__label"
+      >
+        В пути
+      </p>
+      <p
+        className="ticket__value"
+      >
+        100500
+      </p>
+    </div>
+    <div
+      className="ticket__col"
+    >
+      <p
+        className="ticket__label"
+      >
+        100500
+      </p>
+      <p
+        className="ticket__value"
+      >
+        stops
+      </p>
+    </div>
+  </div>
+</Row>
+`;
