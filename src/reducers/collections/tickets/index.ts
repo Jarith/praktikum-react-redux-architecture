@@ -12,7 +12,9 @@ export const tickets = (
 ) => {
     switch (action.type) {
         case FETCH_TICKETS_FULFILLED: {
-            return action.payload.entities.tickets;
+            state = action.payload.entities.tickets;
+
+            return state;
         }
     }
 

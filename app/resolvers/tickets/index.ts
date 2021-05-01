@@ -18,7 +18,9 @@ export const resolveSearchId: Resolver<void, ResolveSearchIdResult> = () =>
 
 export type ResolveTicketsResult = {
     entities: {
-        [id: string]: Ticket;
+        tickets: {
+            [id: string]: Ticket;
+        }
     };
     result: TicketId[];
 };
