@@ -10,10 +10,11 @@ module.exports = {
         '<rootDir>/app',
     ],
     setupFiles: [
-        '<rootDir>/configs/jest/enzyme',
         '<rootDir>/configs/jest/runtime',
     ],
-    snapshotSerializers: ['enzyme-to-json/serializer'],
+    setupFilesAfterEnv: [
+        '<rootDir>/configs/jest/jestDom',
+    ],
     coverageDirectory: '<rootDir>/coverage',
     coveragePathIgnorePatterns: [
         '<rootDir>/entities',

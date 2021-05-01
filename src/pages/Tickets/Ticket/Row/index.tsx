@@ -14,7 +14,7 @@ export const Row = ({
     stops,
     stopsCount,
 }: Props) => (
-    <div className={css.ticket__row}>
+    <div className={css.ticket__row} aria-label="Segment">
         <div className={css.ticket__col}>
             <p className={css.ticket__label}>
                 {origin} – {destination}

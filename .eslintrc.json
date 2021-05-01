@@ -6,7 +6,8 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "react-hooks"
+    "react-hooks",
+    "jest-dom"
   ],
   "extends": [
     "plugin:react/recommended",
