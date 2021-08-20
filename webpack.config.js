@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,12 +10,16 @@ module.exports = {
     entry: './src/index.tsx',
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, 'build'),
+        static: {
+            directory: path.resolve(__dirname, 'build')
+        },
         port: 8080,
         hot: true,
         compress: true,
-        progress: true,
-        watchContentBase: true,
+        client: {
+            overlay: true,
+            progress: true,
+        },
     },
     module: {
         rules: [
@@ -72,11 +78,11 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            outputPath: 'fonts/'
-                        }
-                    }
-                ]
-            }
+                            outputPath: 'fonts/',
+                        },
+                    },
+                ],
+            },
         ],
     },
     resolve: {
@@ -86,9 +92,9 @@ module.exports = {
             app: path.join('app'),
         },
         modules: [
-          __dirname,
-          'src',
-          'node_modules',
+            __dirname,
+            'src',
+            'node_modules',
         ],
         extensions: ['.tsx', '.ts', '.js'],
     },
