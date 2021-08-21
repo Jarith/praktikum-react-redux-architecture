@@ -5,7 +5,7 @@ import type { TicketId } from 'entities/tickets';
 
 import { Loader } from 'components/Loader';
 import { getIsLoading, getTickets } from 'selectors/widgets/tickets';
-import { fetchTickets } from 'thunks/collections/tickets';
+import { fetch } from 'actions/tickets';
 import Ticket from '../Ticket';
 
 import css from './List.module.css';
@@ -13,13 +13,13 @@ import css from './List.module.css';
 type Props = {
     tickets: TicketId[];
     isLoading: boolean;
-    fetchTicketsThunk: () => void;
+    fetchTickets: typeof fetch;
 };
 
-export const List = ({ tickets, isLoading, fetchTicketsThunk }: Props) => {
+export const List = ({ tickets, isLoading, fetchTickets }: Props) => {
     useEffect(() => {
-        fetchTicketsThunk();
-    }, []);
+        fetchTickets();
+    }, [fetchTickets]);
 
     if (isLoading) {
         return <Loader />;
@@ -41,6 +41,6 @@ const mapStateToProps = (state: State) => ({
     isLoading: getIsLoading(state),
 });
 
-export default connect(mapStateToProps, { fetchTicketsThunk: fetchTickets })(
+export default connect(mapStateToProps, { fetchTickets: fetch })(
     List
 );

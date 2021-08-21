@@ -1,7 +1,7 @@
 import type { RawTicket, Ticket, TicketId } from 'entities/tickets';
 import { ticketsListEntity } from 'entities/tickets';
 import { normalize } from 'normalizr';
-import { get } from '../../';
+import { get } from 'app';
 
 type Resolver<P, R> = (params: P) => Promise<R>;
 
